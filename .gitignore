@@ -1,0 +1,48 @@
+# =========================
+# Node / Expo
+# =========================
+frontend/node_modules/
+frontend/.expo/
+frontend/.expo-shared/
+frontend/dist/
+frontend/web-build/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# =========================
+# Python
+# =========================
+backend/__pycache__/
+backend/*.py[cod]
+backend/*.pyo
+backend/*.pyd
+backend/.pytest_cache/
+backend/.mypy_cache/
+
+# Virtual environments (if you ever use one locally)
+venv/
+.env
+.env.*
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/

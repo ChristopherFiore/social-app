@@ -1,0 +1,27 @@
+services:
+  db:
+    image: mysql:8
+    container_name: social_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: socialapp
+      MYSQL_USER: socialuser
+      MYSQL_PASSWORD: socialpassword
+    volumes:
+      - db_data:/var/lib/mysql
+
+  backend:
+    build: ./backend
+    container_name: social_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: mysql+pymysql://socialuser:socialpassword@db/socialapp
+
+volumes:
+  db_data:
